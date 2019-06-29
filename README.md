@@ -26,7 +26,7 @@ make install
 ## Use
 
 ```
-sudo ldc <languafe> <COMMAND>
+sudo ldc <LANGUAGE> <COMMAND>
 ```
 
 ## Example
