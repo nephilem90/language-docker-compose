@@ -26,19 +26,19 @@ make install
 ## Use
 
 ```
-sudo ldc <LANGUAGE> <COMMAND>
+ldc <LANGUAGE> <COMMAND>
 ```
 
 ## Example
 
 ```
-sudo ldc npm install
+ldc npm install
 ```
 
 ```
-sudo ldc node yourscript.js
+ldc node yourscript.js
 ```
 
 ```
-sudo ldc php yourscript.php
+ldc php yourscript.php
 ```
