@@ -1,4 +1,11 @@
 #!/bin/bash
+
+if  ! hash docker-compose 2>/dev/null
+then
+    echo "docker compose is not installed, you must install docker-compose!"
+    exit
+fi
+
 if [[ "$1" == "" ]]
 then
     echo "accepted language:"
