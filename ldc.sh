@@ -29,7 +29,7 @@ else
     exit
 fi
 
-container_name="dc_$image"
+container_name="dc_${image/\//_}"
 yml_name="docker-compose-$container_name.yml"
 command=""
 for var in "$@"
