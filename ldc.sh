@@ -38,7 +38,7 @@ do
 done
 
 if [[ command != "" ]]; then
-    docker ps -aq --filter="name=$container_name" | xargs docker rm
+    docker ps -aq --filter="name=$container_name" | xargs docker rm > /dev/null
     echo "version: '3'" > $yml_name
     echo "" >> $yml_name
     echo "services:" >> $yml_name
