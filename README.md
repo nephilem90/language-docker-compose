@@ -1,4 +1,4 @@
-# Language docker compose (ldc)
+# Language docker console (ldc)
 
 ldc create a temporany container for a language
 
