@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if  ! hash docker-compose 2>/dev/null
+if  ! hash docker 2>/dev/null
 then
-    echo "docker compose is not installed, you must install docker-compose!"
+    echo "docker is not installed, you must install docker!"
     exit
 fi
 
@@ -29,25 +29,6 @@ else
     exit
 fi
 
-container_name="dc_${image/\//_}"
-yml_name="docker-compose-$container_name.yml"
-command=""
-for var in "$@"
-do
-    command="$command $var"
-done
-
 if [[ command != "" ]]; then
-    docker ps -aq --filter="name=$container_name" | xargs docker rm > /dev/null
-    echo "version: '3'" > $yml_name
-    echo "" >> $yml_name
-    echo "services:" >> $yml_name
-    echo "  nodejs:" >> $yml_name
-    echo "    container_name: $container_name" >> $yml_name
-    echo "    image: $image" >> $yml_name
-    echo "    volumes:" >> $yml_name
-    echo "      - .:/home/app" >> $yml_name
-    echo "    command: sh -c \"cd /home/app && $command\"" >> $yml_name
-    docker-compose -f $yml_name up
-    rm $yml_name
+    docker run --rm -v "$PWD":/home/app "$image" "$@"
 fi
