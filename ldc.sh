@@ -29,6 +29,4 @@ else
     exit
 fi
 
-if [[ command != "" ]]; then
-    docker run --rm -v "$PWD":/home/app "$image" "$@"
-fi
+docker run --rm -v $(pwd):/home/app "$image" bash -c "cd /home/app" && "$@"
