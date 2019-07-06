@@ -29,4 +29,10 @@ else
     exit
 fi
 
-docker run --rm -v $(pwd):/home/app "$image" bash -c "cd /home/app" && "$@"
+command=""
+for var in $@
+do
+    command="$command $var"
+done
+
+docker run --rm -v $(pwd):/home/app "$image" bash -c "cd /home/app && $command"
