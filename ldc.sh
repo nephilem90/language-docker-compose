@@ -15,9 +15,12 @@ then
     exit
 fi
 
-if [[ "$1" == "php" ]] || [[ "$1" == "composer" ]]
+if [[ "$1" == "php" ]]
 then
     image="php"
+elif [[ "$1" == "composer" ]]
+then
+    image="composer"
 elif [[ "$1" == "node" ]] || [[ "$1" == "npm" ]]
 then
     image="node"
