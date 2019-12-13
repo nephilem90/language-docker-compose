@@ -21,7 +21,7 @@ then
 elif [[ "$1" == "composer" ]]
 then
     image="composer"
-elif [[ "$1" == "node" ]] || [[ "$1" == "npm" ]]
+elif [[ "$1" == "node" ]] || [[ "$1" == "npm" ]]  || [[ "$1" == "tsc" ]]
 then
     image="node"
 elif [[ "$1" == "python" ]] || [[ "$1" == "pip" ]]
