@@ -28,8 +28,7 @@ elif [[ "$1" == "python" ]] || [[ "$1" == "pip" ]]
 then
     image="python"
 else
-    echo "language not found!"
-    exit
+    image="bash"
 fi
 
 command=""
@@ -38,4 +37,4 @@ do
     command="$command $var"
 done
 
-docker run --rm -v $(pwd):/home/app "$image" bash -c "cd /home/app && $command"
+docker run --rm -it --name "$USER" --user 1000 -v $(pwd):/home/app "$image" bash -c "cd /home/app && $command"
